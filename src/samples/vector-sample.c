@@ -17,8 +17,11 @@ int main(int argc, char** argv) {
     printf("\n");
     
     mcc_vector_remove(vector, count / 2 - 1);
+
+    uint16_t val = 1024;
+    mcc_vector_insert(vector, count / 2 - 1, val);
     
-    printf("After removing the middle item:\n\t");
+    printf("After replacing the middle item:\n\t");
     for (mcc_size_t i = 0; i < mcc_vector_size(vector); ++i)
         printf("%d ", vector[i]);
     printf("\n");

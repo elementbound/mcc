@@ -5,6 +5,7 @@
 
 void* _mcc_vector_create();
 void* _mcc_vector_add(void* vector, void* data, mcc_size_t item_size);
+void* _mcc_vector_insert(void* vector, mcc_index_t at, void* data, mcc_size_t item_size);
 void  _mcc_vector_remove(void* vector, mcc_index_t at, mcc_size_t item_size);
 void  _mcc_vector_destroy(void* vector);
 
@@ -15,6 +16,7 @@ void* _mcc_vector_ensure_capacity(void* vector, mcc_size_t capacity, mcc_size_t 
 
 #define mcc_vector_create() _mcc_vector_create()
 #define mcc_vector_add(vector, data) _mcc_vector_add(vector, &(data), sizeof(*vector))
+#define mcc_vector_insert(vector, at, data) _mcc_vector_insert(vector, at, &(data), sizeof(*vector))
 #define mcc_vector_remove(vector, at) _mcc_vector_remove(vector, at, sizeof(*vector))
 #define mcc_vector_destroy(vector) _mcc_vector_destroy(vector)
 

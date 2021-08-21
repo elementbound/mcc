@@ -3,8 +3,8 @@
 #include <string.h>
 #include <stddef.h>
 
-#define DATA_TO_VECTOR(vector_data) ((mcc_vector_t*)((vector_data) - sizeof(mcc_vector_t)))
-#define VECTOR_TO_DATA(vector) ((void*)(vector) + sizeof(mcc_vector_t))
+#define DATA_TO_VECTOR(vector_data) ((mcc_vector_t*)((uint8_t*)(vector_data) - sizeof(mcc_vector_t)))
+#define VECTOR_TO_DATA(vector) ((uint8_t*)(vector) + sizeof(mcc_vector_t))
 #define INITIAL_CAPACITY 10
 
 typedef struct {
@@ -38,13 +38,34 @@ void* _mcc_vector_add(void* vector_data, void* data, mcc_size_t item_size) {
     return VECTOR_TO_DATA(vector);
 }
 
+void* _mcc_vector_insert(void* vector_data, mcc_index_t at, void* data, mcc_size_t item_size) {
+    mcc_vector_t* vector = DATA_TO_VECTOR(vector_data);
+    
+    if (at == vector->size)
+        return _mcc_vector_add(vector_data, data, item_size);
+    else if (at > vector->size)
+        return vector_data;
+
+    vector_data = _mcc_vector_ensure_capacity(vector_data, vector->size + 1, item_size);
+    vector = DATA_TO_VECTOR(vector_data);
+
+    memmove((uint8_t*)vector_data + (at+1) * item_size,
+        (uint8_t*)vector_data + at * item_size,
+        (vector->size - at) * item_size);
+    
+    memcpy((uint8_t*)vector_data + at * item_size, data, item_size);
+
+    return vector_data;
+}
+
 void _mcc_vector_remove(void* vector_data, mcc_index_t at, mcc_size_t item_size) {
     mcc_vector_t* vector = DATA_TO_VECTOR(vector_data);
 
     if (at >= vector->size)
         return;
 
-    memmove(vector_data + at * item_size, vector_data + (at+1) * item_size, (vector->size - 1) * item_size);
+    memmove((uint8_t*)(vector_data) + at * item_size,
+        (uint8_t*)(vector_data) + (at+1) * item_size, (vector->size - 1) * item_size);
     --vector->size;
 }
 
