@@ -65,7 +65,8 @@ void _mcc_vector_remove(void* vector_data, mcc_index_t at, mcc_size_t item_size)
         return;
 
     memmove((uint8_t*)(vector_data) + at * item_size,
-        (uint8_t*)(vector_data) + (at+1) * item_size, (vector->size - 1) * item_size);
+        (uint8_t*)(vector_data) + (at+1) * item_size,
+        (vector->size - at - 1) * item_size);
     --vector->size;
 }
 
