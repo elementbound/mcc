@@ -7,4 +7,6 @@
 typedef uint64_t mcc_size_t;
 typedef uint64_t mcc_index_t;
 
+typedef int (*mcc_compare_fn_t)(const void*, const void*, mcc_size_t);
+
 #endif

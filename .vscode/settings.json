@@ -24,5 +24,6 @@
     "files.associations": {
         "*.h": "c",
         "*.c": "c"
-    }
+    },
+    "mesonbuild.configureOnOpen": false
 }
