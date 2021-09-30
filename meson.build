@@ -14,3 +14,19 @@ executable('treeset-strings', 'src/samples/treeset-strings.c', sources, include_
 executable('treemap-sample', 'src/samples/treemap-sample.c', sources, include_directories: includes)
 
 executable('bsearch_visual', 'src/samples/bsearch_visual.c')
+
+# Doxygen
+doxygen = find_program('doxygen', required : false)
+if doxygen.found()
+  message('Doxygen found')
+  run_target('docs', command : [doxygen, meson.source_root() + '/Doxyfile'])    
+else
+  warning('Documentation disabled without doxygen')
+endif
+
+custom_target('docs',
+    command: [doxygen, meson.source_root() + '/Doxyfile'],
+    output: '.',
+    install: false,
+    build_by_default: true
+)
