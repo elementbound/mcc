@@ -31,6 +31,8 @@ mcc_size_t _mcc_treeset_size(void* set);
  * Allocate an empty set on the heap.
  * 
  * @returns set
+ * 
+ * @see mcc_treeset_create_ex
  */
 #define mcc_treeset_create() _mcc_treeset_create()
 
