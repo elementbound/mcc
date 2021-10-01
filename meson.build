@@ -1,7 +1,8 @@
 project('macrocol', 'c',
     default_options: [
         'c_std=c11'
-    ])
+    ],
+    version: '0.5.1')
 
 includes = include_directories('include')
 sources = [ 'src/macrocol/typehandlers.c', 'src/macrocol/vector.c', 'src/macrocol/treeset.c', 'src/macrocol/treemap.c', 'src/macrocol/hashset.c' ]
@@ -17,17 +18,25 @@ executable('hashset-sample', 'src/samples/hashset-sample.c', sources, include_di
 executable('bsearch_visual', 'src/samples/bsearch_visual.c')
 
 # Doxygen
+doc_config = configuration_data()
+doc_config.set('PROJECT_NAME', meson.project_name())
+doc_config.set('PROJECT_VERSION', meson.project_version())
+doc_config.set('builddir', meson.current_build_dir())
+doc_config.set('sourcedir', meson.current_source_dir())
+
+doxyfile = configure_file(input: 'Doxyfile.in',
+    output: 'Doxyfile',
+    configuration: doc_config,
+    install: false)
+    
 doxygen = find_program('doxygen', required : false)
 if doxygen.found()
-  message('Doxygen found')
-  run_target('docs', command : [doxygen, meson.source_root() + '/Doxyfile'])    
+    custom_target('docs',
+        command: [doxygen, doxyfile],
+        output: '.',
+        install: false,
+        build_by_default: true
+    )
 else
   warning('Documentation disabled without doxygen')
 endif
-
-custom_target('docs',
-    command: [doxygen, meson.source_root() + '/Doxyfile'],
-    output: '.',
-    install: false,
-    build_by_default: true
-)

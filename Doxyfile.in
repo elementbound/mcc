@@ -1,0 +1,18 @@
+PROJECT_NAME           = @PROJECT_NAME@
+PROJECT_NUMBER         = @PROJECT_VERSION@
+PROJECT_BRIEF          = "Generic collections for C"
+OUTPUT_DIRECTORY       = @builddir@/docs
+STRIP_FROM_PATH        = @sourcedir@
+STRIP_FROM_INC_PATH    = @sourcedir@
+JAVADOC_AUTOBRIEF      = YES
+OPTIMIZE_OUTPUT_FOR_C  = YES
+INLINE_SIMPLE_STRUCTS  = YES
+HIDE_UNDOC_MEMBERS     = YES
+HIDE_UNDOC_CLASSES     = YES
+SHOW_NAMESPACES        = NO
+INPUT                  = @sourcedir@/include \
+                         @sourcedir@/README.md
+RECURSIVE              = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+HTML_TIMESTAMP         = YES
+GENERATE_TREEVIEW      = NO
