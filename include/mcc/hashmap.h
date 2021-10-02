@@ -11,10 +11,10 @@
  * @see vector.h
  */
 
-#ifndef _H_MACROCOL_HASHMAP
-#define _H_MACROCOL_HASHMAP
+#ifndef _H_MCC_HASHMAP
+#define _H_MCC_HASHMAP
 
-#include <macrocol/types.h>
+#include <mcc/types.h>
 
 void _mcc_hashmap_create(void** keys, void** values);
 void _mcc_hashmap_create_ex(void** keys, void** values, mcc_hash_fn_t hash_func, mcc_equals_fn_t equals_func, mcc_size_t buckets);

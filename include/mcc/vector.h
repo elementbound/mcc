@@ -8,10 +8,10 @@
  * - Calls where the vector pointer may be invalidated always return a valid pointer that can be used after the call.
  */
 
-#ifndef _H_MACROCOL_VECTOR
-#define _H_MACROCOL_VECTOR
+#ifndef _H_MCC_VECTOR
+#define _H_MCC_VECTOR
 
-#include <macrocol/types.h>
+#include <mcc/types.h>
 
 void* _mcc_vector_create(void* userdata);
 void* _mcc_vector_add(void* vector, void* data, mcc_size_t item_size);

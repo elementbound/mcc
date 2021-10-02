@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-#include <macrocol/treemap.h>
+#include <mcc/treemap.h>
 
 int mcc_strcmp(const void* pa, const void* pb, mcc_size_t item_size) {
     const char* a = *(const char**)(pa);

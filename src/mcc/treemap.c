@@ -1,6 +1,6 @@
-#include <macrocol/treemap.h>
-#include <macrocol/treeset.h>
-#include <macrocol/vector.h>
+#include <mcc/treemap.h>
+#include <mcc/treeset.h>
+#include <mcc/vector.h>
 
 #include <string.h>
 

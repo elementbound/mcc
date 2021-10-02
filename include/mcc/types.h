@@ -1,9 +1,9 @@
 /**
- * \file types.h Common type definitions for macrocol.
+ * \file types.h Common type definitions for `libmcc`.
  */
 
-#ifndef _H_MACROCOL_TYPES
-#define _H_MACROCOL_TYPES
+#ifndef _H_MCC_TYPES
+#define _H_MCC_TYPES
 
 #include <stdbool.h>
 #include <stdint.h>

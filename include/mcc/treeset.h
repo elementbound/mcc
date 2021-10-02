@@ -10,10 +10,10 @@
  * @see vector.h
  */
 
-#ifndef _H_MACROCOL_TREESET
-#define _H_MACROCOL_TREESET
+#ifndef _H_MCC_TREESET
+#define _H_MCC_TREESET
 
-#include <macrocol/types.h>
+#include <mcc/types.h>
 
 void* _mcc_treeset_create();
 void* _mcc_treeset_create_ex(mcc_compare_fn_t compare_fn);

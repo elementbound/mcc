@@ -1,17 +1,17 @@
-project('macrocol', 'c',
+project('mcc', 'c',
     default_options: [
         'c_std=c11'
     ],
-    version: '0.6.1')
+    version: '0.7.0')
 
 includes = include_directories('include')
 sources = [
-    'src/macrocol/typehandlers.c',
-    'src/macrocol/vector.c',
-    'src/macrocol/treeset.c',
-    'src/macrocol/treemap.c',
-    'src/macrocol/hashset.c',
-    'src/macrocol/hashmap.c'
+    'src/mcc/typehandlers.c',
+    'src/mcc/vector.c',
+    'src/mcc/treeset.c',
+    'src/mcc/treemap.c',
+    'src/mcc/hashset.c',
+    'src/mcc/hashmap.c'
     ]
 
 library('mcc', sources, include_directories: includes)

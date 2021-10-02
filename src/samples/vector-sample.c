@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
-#include <macrocol/vector.h>
+#include <mcc/vector.h>
 
 int main(int argc, char** argv) {
     uint16_t count = 8;

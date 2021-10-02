@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <macrocol/vector.h>
-#include <macrocol/treeset.h>
+#include <mcc/vector.h>
+#include <mcc/treeset.h>
 
 int mcc_strcmp(const void* pa, const void* pb, mcc_size_t item_size) {
     const char* a = *(const char**)pa;

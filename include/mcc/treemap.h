@@ -13,10 +13,10 @@
  * @see treeset.h
  */ 
 
-#ifndef _H_MACROCOL_TREEMAP
-#define _H_MACROCOL_TREEMAP
+#ifndef _H_MCC_TREEMAP
+#define _H_MCC_TREEMAP
 
-#include <macrocol/types.h>
+#include <mcc/types.h>
 
 void  _mcc_treemap_create(void** keys, void** values, mcc_compare_fn_t key_comparator);
 void  _mcc_treemap_set(void** keys, void** values, void* key, void* value, mcc_size_t key_size, mcc_size_t value_size);

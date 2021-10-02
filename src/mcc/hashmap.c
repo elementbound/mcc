@@ -1,7 +1,7 @@
-#include <macrocol/hashmap.h>
-#include <macrocol/hashset.h>
-#include <macrocol/vector.h>
-#include <macrocol/typehandlers.h>
+#include <mcc/hashmap.h>
+#include <mcc/hashset.h>
+#include <mcc/vector.h>
+#include <mcc/typehandlers.h>
 #include <stddef.h>
 #include <string.h>
 

@@ -8,10 +8,10 @@
  * The same applies to collections of types with pointers - i.e. structs with pointers inside that should be taken into account.
  */
 
-#ifndef _H_MACROCOL_TYPEHANDLERS
-#define _H_MACROCOL_TYPEHANDLERS
+#ifndef _H_MCC_TYPEHANDLERS
+#define _H_MCC_TYPEHANDLERS
 
-#include <macrocol/types.h>
+#include <mcc/types.h>
 
 /**
  * Generic comparison implementation.

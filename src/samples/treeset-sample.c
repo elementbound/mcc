@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
-#include <macrocol/treeset.h>
+#include <mcc/treeset.h>
 
 void print_treeset(uint16_t* set) {
     for (mcc_size_t i = 0; i < mcc_treeset_size(set); ++i)

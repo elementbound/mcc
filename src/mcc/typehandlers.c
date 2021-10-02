@@ -1,4 +1,4 @@
-#include <macrocol/typehandlers.h>
+#include <mcc/typehandlers.h>
 #include <string.h>
 
 int mcc_generic_compare(const void* pa, const void* pb, mcc_size_t item_size) {

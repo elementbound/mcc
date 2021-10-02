@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <macrocol/hashset.h>
-#include <macrocol/typehandlers.h>
+#include <mcc/hashset.h>
+#include <mcc/typehandlers.h>
 
 int main(int argc, char** argv) {
     mcc_size_t capacity = argc * 100 / 75;

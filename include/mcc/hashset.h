@@ -13,10 +13,10 @@
  * @see typehandlers.h
  */
 
-#ifndef _H_MACROCOL_HASHSET
-#define _H_MACROCOL_HASHSET
+#ifndef _H_MCC_HASHSET
+#define _H_MCC_HASHSET
 
-#include <macrocol/types.h>
+#include <mcc/types.h>
 
 void* _mcc_hashset_create();
 void* _mcc_hashset_create_ex(mcc_hash_fn_t hash_func, mcc_equals_fn_t equals_func, mcc_size_t buckets);

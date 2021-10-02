@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <macrocol/hashmap.h>
-#include <macrocol/typehandlers.h>
+#include <mcc/hashmap.h>
+#include <mcc/typehandlers.h>
 
 char* strjoin(const char* a, const char* b) {
     int lena = strlen(a);
