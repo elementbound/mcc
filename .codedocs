@@ -1,0 +1,7 @@
+DOXYFILE               = Doxyfile.in
+
+PROJECT_NAME           = mcc
+PROJECT_VERSION        = ""
+INPUT                  = include \
+                         README.md \
+                         LICENSE

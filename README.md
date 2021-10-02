@@ -12,7 +12,7 @@ cd build
 ninja
 ```
 
-## Usage
+## Usage [![codedocs](https://codedocs.xyz/elementbound/mcc.svg)](https://codedocs.xyz/elementbound/mcc/index.html)
 
 Docs are generated during build via [Doxygen](https://www.doxygen.nl/). They are placed under `build/docs`.
 
