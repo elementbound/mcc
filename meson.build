@@ -1,8 +1,8 @@
-project('mcc', 'c',
+project('libmcc', 'c',
     default_options: [
         'c_std=c11'
     ],
-    version: '0.7.0')
+    version: '0.7.1')
 
 includes = include_directories('include')
 sources = [
@@ -15,6 +15,11 @@ sources = [
     ]
 
 libmcc = library('mcc', sources, include_directories: includes)
+
+libmcc_dep = declare_dependency(
+    include_directories: 'include/mcc',
+    link_with: libmcc
+)
 
 executable('vector-sample', 'src/samples/vector-sample.c', link_with: libmcc, include_directories: includes)
 executable('treeset-sample', 'src/samples/treeset-sample.c', link_with: libmcc, include_directories: includes)
