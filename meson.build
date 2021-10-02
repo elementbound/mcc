@@ -14,14 +14,14 @@ sources = [
     'src/mcc/hashmap.c'
     ]
 
-library('mcc', sources, include_directories: includes)
+libmcc = library('mcc', sources, include_directories: includes)
 
-executable('vector-sample', 'src/samples/vector-sample.c', sources, include_directories: includes)
-executable('treeset-sample', 'src/samples/treeset-sample.c', sources, include_directories: includes)
-executable('treeset-strings', 'src/samples/treeset-strings.c', sources, include_directories: includes)
-executable('treemap-sample', 'src/samples/treemap-sample.c', sources, include_directories: includes)
-executable('hashset-sample', 'src/samples/hashset-sample.c', sources, include_directories: includes)
-executable('hashmap-sample', 'src/samples/hashmap-sample.c', sources, include_directories: includes)
+executable('vector-sample', 'src/samples/vector-sample.c', link_with: libmcc, include_directories: includes)
+executable('treeset-sample', 'src/samples/treeset-sample.c', link_with: libmcc, include_directories: includes)
+executable('treeset-strings', 'src/samples/treeset-strings.c', link_with: libmcc, include_directories: includes)
+executable('treemap-sample', 'src/samples/treemap-sample.c', link_with: libmcc, include_directories: includes)
+executable('hashset-sample', 'src/samples/hashset-sample.c', link_with: libmcc, include_directories: includes)
+executable('hashmap-sample', 'src/samples/hashmap-sample.c', link_with: libmcc, include_directories: includes)
 
 executable('bsearch_visual', 'src/samples/bsearch_visual.c')
 

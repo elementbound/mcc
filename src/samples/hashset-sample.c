@@ -17,6 +17,7 @@ int main(int argc, char** argv) {
     printf("Unique arguments:\n\t");
     for (mcc_index_t i = 0; i < mcc_hashset_size(uniq_args); ++i)
         printf("%s ", uniq_args[i]);
+    printf("\n");
     
     return 0;
 }
