@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifndef MCC_DEFAULT_BUCKETS
+#ifndef MCC_HASHSET_DEFAULT_BUCKETS
     #define MCC_HASHSET_DEFAULT_BUCKETS 32
 #endif
     

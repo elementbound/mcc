@@ -2,10 +2,17 @@ project('macrocol', 'c',
     default_options: [
         'c_std=c11'
     ],
-    version: '0.5.1')
+    version: '0.6.0')
 
 includes = include_directories('include')
-sources = [ 'src/macrocol/typehandlers.c', 'src/macrocol/vector.c', 'src/macrocol/treeset.c', 'src/macrocol/treemap.c', 'src/macrocol/hashset.c' ]
+sources = [
+    'src/macrocol/typehandlers.c',
+    'src/macrocol/vector.c',
+    'src/macrocol/treeset.c',
+    'src/macrocol/treemap.c',
+    'src/macrocol/hashset.c',
+    'src/macrocol/hashmap.c'
+    ]
 
 library('mcc', sources, include_directories: includes)
 
@@ -14,6 +21,7 @@ executable('treeset-sample', 'src/samples/treeset-sample.c', sources, include_di
 executable('treeset-strings', 'src/samples/treeset-strings.c', sources, include_directories: includes)
 executable('treemap-sample', 'src/samples/treemap-sample.c', sources, include_directories: includes)
 executable('hashset-sample', 'src/samples/hashset-sample.c', sources, include_directories: includes)
+executable('hashmap-sample', 'src/samples/hashmap-sample.c', sources, include_directories: includes)
 
 executable('bsearch_visual', 'src/samples/bsearch_visual.c')
 
@@ -33,9 +41,10 @@ doxygen = find_program('doxygen', required : false)
 if doxygen.found()
     custom_target('docs',
         command: [doxygen, doxyfile],
-        output: '.',
+        output: 'docs',
         install: false,
-        build_by_default: true
+        build_by_default: true,
+        build_always_stale: true
     )
 else
   warning('Documentation disabled without doxygen')
