@@ -11,7 +11,8 @@ HIDE_UNDOC_MEMBERS     = YES
 HIDE_UNDOC_CLASSES     = YES
 SHOW_NAMESPACES        = NO
 INPUT                  = @sourcedir@/include \
-                         @sourcedir@/README.md
+                         @sourcedir@/README.md \
+                         @sourcedir@/LICENSE
 RECURSIVE              = YES
 USE_MDFILE_AS_MAINPAGE = README.md
 HTML_TIMESTAMP         = YES

@@ -2,7 +2,7 @@ project('macrocol', 'c',
     default_options: [
         'c_std=c11'
     ],
-    version: '0.6.0')
+    version: '0.6.1')
 
 includes = include_directories('include')
 sources = [
